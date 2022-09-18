@@ -41,7 +41,14 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
-
-body {
-  font-family: -apple-system, 'AaarghNormal','PlastikItaliqueRegular','KHGroteskRegular','ConnectionRegular','CrosterianRegular' ,'FuturaRennerRegular', BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-}  
+/*
+Set alternative border box
+*/
+html {
+  box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}

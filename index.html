@@ -7,320 +7,192 @@
   <title>Admin Dashboard</title>
   <link rel="stylesheet" href="cssreset.css">
   <link rel="stylesheet" href="styles.css">
-
-
+  <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/gentium-plus" type="text/css"/>
+  
   <style>
-
+    body {
+      font-family: 'GentiumPlusRegular', sans-serif;
+    }
     .container {
+      height: 100vh;
+      width: 100vw;
+      background-color: #D9EBFC; 
+      display: grid;
+      grid-template: 1fr 4fr/1fr 4fr;
 
-      box-sizing: border-box;
-      background-color: #DCEDFF;
-      
     }
-    #sidebar {
-      grid-area: sidebar;
+    .sidebar {
+      grid-column: 1/2;
+      grid-row:1/3;
+      background-color: #63ADF2;
+    }
+    .top-links {
+      display: grid;
+      grid-template-columns: 1fr;
+    }
+    .sidebar img {
+      width: 30px;
+      border-radius: 20px;
+      opacity: .9;
       background-color: white;
+    }
+    .row-text {
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: white;
+    }
+    .link-row {
+      padding: 10px;
       display: flex;
-      flex-direction: column;
-      border: 10px solid black;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 20px;
+    }
+    .header {
+      display: flex;
+      font-size: 1.5rem;
+      color: white;
+      font-weight:999;
+      margin-bottom: 50px;
+    }
+    .top-links {
+      margin-bottom: 50px;
+    }
+    .header img {
+      width: 50px;
     }
 
-    #side-bar-header{
-      display: flex;
-      gap: 10px;
-      align-items: center;
-      justify-content: flex-start;
+
+    .top-section {
+      grid-column: 2/4;
+      grid-row: 1;
+      background-color: white;
     }
-    #side-bar-header img {
-      width: 50px;
+    .top-section img {
+      width: 30px;
+    }
+    .search-bar-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 20px;
+    }
+    .left, .right {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+    }
+    .left input {
+      width: 500px;
+      height: 30px;
       border-radius: 50px;
     }
 
-    #side-bar-links-1 {
-      display: flex;
-      flex-direction: column;
-
-    }
-    .link-row {
-      display: flex;
-      gap: 20px;
-      justify-content:flex-start;
-      align-items:flex-end;
-    }
-    .link-row img {
-      width: 30px;
-      border-radius: 10px;
-    }
-    #top-header {
-      grid-area: top-header;
+    .new-upload-share-row {
       display: flex;
       justify-content: space-between;
+    }
+    .new-upload-share-row {
       padding: 10px;
-      background-color: white;
-      border-bottom: 10px solid black;
-      border-top: 10px solid black;
-      border-right: 10px solid black;
+      font-size: 1.5rem;
     }
-    #top-header-left, #top-header-right {
-      display: flex;
-      gap: 15px;
-      justify-content: center;
-      align-items: center;
-    }
-
-    #top-header-left img {
-      width: 40px;
-      height: 40px;
-      border-radius: 5px;
-    }
-    .form-row input {
-      width: 500px;
-      height: 30px;
-      border-radius: 20px;
-    }
- 
-    #top-header-right img {
-      width: 40px;
-      height: 40px;
-      border-radius: 5px;
-    }
-    #new-upload-share-row {
-      grid-area: new-upload-share-row;
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-      border-bottom: 10px solid black;
-      border-right: 10px solid black;
-      
-    }
-    #introduction {
-      display: flex;
-      gap: 30px;
+    .new-upload-share-row img {
+      width: 60px;
 
     }
-    #introduction img {
+    button {
+      background-color: #63ADF2;
+      border: none;
       width: 100px;
-      padding: 0;
-      margin: 0;
+      height: 35px;
+      border-radius: 20px;
+      color: white;
     }
-    .introduction-text {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-evenly;
-    }
-    #button-container {
-      display: flex;
-      gap: 20px;
-    }
-    #button-container button {
-      width: 200px;
-      height: 50px;
-      border-radius: 30px;
-      color: black;
-      background-color:#D1DDEF;
-    }
-    #project-section {
-      grid-area: project-section;
-      background-color: #D1DDEF;
-    }
-    #announcements {
-      grid-area: announcements;
-      background-color:#8f91a2;
-    }
-    #trending {
-      grid-area: trending;
-      background-color: #A9B1B2;
-    }
-    .container {
-      display: grid;
-      grid-template-columns: 1fr 4fr 1fr;
-      grid-template-areas: 
-        "sidebar top-header top-header"
-        "sidebar new-upload-share-row new-upload-share-row"
-        "sidebar project-section announcements"
-        "sidebar project-section trending";
-      width: 100vw;
-      height: 100vh;
-    }
+  </style>
+
+  <style>
+
+
+
+
   </style>
 
 </head>
 <body>
   <div class="container">
-
-    <div id="sidebar">
-      <div id="side-bar-header">
-        <img src="header-icon.png">
+    <div class="sidebar">
+      <div class="header link-row">
+        <img src="./images/dashboard.svg">
         <div>Dashboard</div>
       </div>
-      <div id="side-bar-links1">
+      <div class="top-links">
         <div class="link-row">
-          <img src="home.png">
-          <div>Home</div>
+          <img src="./images/home.svg" alt="home">
+          <div class="row-text">Home</div>
         </div>
         <div class="link-row">
-          <img src="profile.png">
-          <div>Profile</div>
+          <img src="./images/profile.svg" alt="profile">
+          <div class="row-text">Profile</div>
         </div>
         <div class="link-row">
-          <img src="messages.png">
-          <div>Messages</div>
+          <img src="./images/messages.svg" alt="messages">
+          <div class="row-text">Messages</div>
         </div>
         <div class="link-row">
-          <img src="history.png">
-          <div>History</div>
+          <img src="./images/task.svg" alt="task">
+          <div class="row-text">Tasks</div>
         </div>
         <div class="link-row">
-          <img src="task.png">
-          <div>Tasks</div>
+          <img src="./images/communities.svg" alt="communities">
+          <div class="row-text">Communities</div>
         </div>
-        <div class="link-row">
-          <img src="communities.png">
-          <div>Communities</div>
-        </div>
+      
       </div>
-      <div id="side-bar-links2">
+      
+      <div class="bottom-links">
         <div class="link-row">
-          <img src="settings.png">
-          <div>Settings</div>
+          <img src="./images/settings.svg" alt="settings">
+          <div class="row-text">Settings</div>
         </div>
         <div class="link-row">
-          <img src="support.png">
-          <div>Support</div>
+          <img src="./images/support.svg" alt="support">
+          <div class="row-text">Support</div>
         </div>
         <div class="link-row">
-          <img src="privacy.png">
-          <div>Privacy</div>
+          <img src="./images/privacy.svg" alt="privacy">
+          <div class="row-text">Privacy</div>
         </div>
       </div>
     </div>
-
-    <div id="top-header">
-      <div id="top-header-left">
-        <img src="search.png">
-        <form action="" method="get" class="speaker-form">
-          <div class="form-row">
-            <label for="search0-bar"></label>
-            <input id="search-bar" name="search-bar" type="text" />
-          </div>
-        </form>
-
-      </div>
-      <div id="top-header-right">
-        <img src="alert.png">
-        <img src="logo-icon.png">
-        <div id="first-last-name">Ryan Bennett.</div>
-      </div>
-    </div>
-
-    <div id="new-upload-share-row">
-      <div id="introduction">
-        <img src="logo-icon.png">
-        <div class="introduction-text">
-          <div>Hi there,</div>
-          <div id="users-name">Ryan Bennett (@rybe)</div>
+    <div class="top-section">
+      <div class="search-bar-row">
+        <div class="left">
+          <img src="./images/search.svg" alt="search">
+          <form>
+            <input>
+          </form>
+        </div>
+        <div class="right">
+          <img src="./images/alert.svg" alt="alert">
+          <img src="./images/logo.svg" alt="logo">
+          <div>Ryan Bennett</div>
         </div>
       </div>
-      <div id="button-container">
-        <button>New</button>
-        <button>Upload</button>
-        <button>Share</button>
-      </div>
-    </div>
-
-    <div id="project-section">
-      <div id="project-title">Your projects</div>
-      <div id="project-container">
-        <div class="card">
-          <p class="title">Article Title</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud...</p>
+      <div class="new-upload-share-row">
+        <div class="left">
+          <img src="./images/logo.svg" alt="logo">
+          <div>Ryan Bennett (@rybe)</div>
         </div>
-        <div class="card">
-          <p class="title">Article Title</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud...</p>
-        </div>
-        <div class="card">
-          <p class="title">Article Title</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud...</p>
-        </div>
-        <div class="card">
-          <p class="title">Article Title</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud...</p>
-        </div>
-        <div class="card">
-          <p class="title">Article Title</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud...</p>
-        </div>
-        <div class="card">
-          <p class="title">Article Title</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud...</p>
-        </div>
-        <div class="card">
-          <p class="title">Article Title</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud...</p>
-        </div>
-        <div class="card">
-          <p class="title">Article Title</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud...</p>
-        </div>
-        <div class="card">
-          <p class="title">Article Title</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud...</p>
-        </div>
-        <div class="card">
-          <p class="title">Article Title</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud...</p>
-        </div>
-        <div class="card">
-          <p class="title">Article Title</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud...</p>
-        </div>
-        <div class="card">
-          <p class="title">Article Title</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud...</p>
-        </div>
-      </div>
-    </div>
-
-    <div id="announcements">
-      <div class="announcement">
-        <p>Some random text</p>
-        <p>Some random text</p>
-      </div>
-      <div class="announcement">
-        <p>Some random text</p>
-        <p>Some random text</p>
-      </div>
-      <div class="announcement">
-        <p>Some random text</p>
-        <p>Some random text</p>
-      </div>
-    </div>
-
-    <div id="trending">
-      <div class="trending-item">
-        <div>Icon</div>
-        <div class="trending-item-text">
-          <div>Trending item top text</div>
-          <div>Trending item bottom text.</div>
-        </div>
-      </div>
-      <div class="trending-item">
-        <div>Icon</div>
-        <div class="trending-item-text">
-          <div>Trending item top text</div>
-          <div>Trending item bottom text.</div>
-        </div>
-      </div>
-      <div class="trending-item">
-        <div>Icon</div>
-        <div class="trending-item-text">
-          <div>Trending item top text</div>
-          <div>Trending item bottom text.</div>
+        <div class="right">
+          <button>New</button>
+          <button>Upload</button>
+          <button>Share</button>
         </div>
       </div>
     </div>
   </div>
+
+
   
 </body>
 </html>
